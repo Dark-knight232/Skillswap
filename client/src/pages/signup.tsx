@@ -187,9 +187,9 @@ export default function Signup() {
           <p className="text-sm text-muted-foreground">
             Already have an account?{" "}
             <Link href="/login">
-              <a className="font-medium text-foreground hover:underline" data-testid="link-login">
+              <span className="font-medium text-foreground hover:underline cursor-pointer" data-testid="link-login">
                 Log in
-              </a>
+              </span>
             </Link>
           </p>
         </CardFooter>

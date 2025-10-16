@@ -78,12 +78,10 @@ export default function ForgotPassword() {
                 Please check your inbox and follow the instructions.
               </p>
               <Link href="/login">
-                <a data-testid="link-back-login">
-                  <Button variant="outline" className="w-full">
-                    <ArrowLeft className="h-4 w-4 mr-2" />
-                    Back to Login
-                  </Button>
-                </a>
+                <Button variant="outline" className="w-full" data-testid="link-back-login">
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  Back to Login
+                </Button>
               </Link>
             </div>
           )}
@@ -91,10 +89,10 @@ export default function ForgotPassword() {
           {!isSubmitted && (
             <div className="mt-6 text-center">
               <Link href="/login">
-                <a className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2" data-testid="link-back-login-alt">
+                <span className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2 cursor-pointer" data-testid="link-back-login-alt">
                   <ArrowLeft className="h-4 w-4" />
                   Back to Login
-                </a>
+                </span>
               </Link>
             </div>
           )}

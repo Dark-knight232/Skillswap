@@ -90,9 +90,9 @@ export default function Login() {
                     <div className="flex items-center justify-between mb-2">
                       <FormLabel>Password</FormLabel>
                       <Link href="/forgot-password">
-                        <a className="text-sm text-muted-foreground hover:text-foreground transition-colors" data-testid="link-forgot-password">
+                        <span className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer" data-testid="link-forgot-password">
                           Forgot password?
-                        </a>
+                        </span>
                       </Link>
                     </div>
                     <FormControl>
@@ -133,9 +133,9 @@ export default function Login() {
           <p className="text-sm text-muted-foreground">
             Don't have an account?{" "}
             <Link href="/signup">
-              <a className="font-medium text-foreground hover:underline" data-testid="link-signup">
+              <span className="font-medium text-foreground hover:underline cursor-pointer" data-testid="link-signup">
                 Sign up
-              </a>
+              </span>
             </Link>
           </p>
         </CardFooter>

@@ -34,23 +34,19 @@ export default function Landing() {
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/">
-            <a className="text-2xl font-bold tracking-tight hover-elevate active-elevate-2 px-4 py-2 rounded-lg" data-testid="link-home">
+            <button className="text-2xl font-bold tracking-tight hover-elevate active-elevate-2 px-4 py-2 rounded-lg bg-transparent border-0 cursor-pointer" data-testid="link-home">
               SkillSwap
-            </a>
+            </button>
           </Link>
           <div className="flex items-center gap-4">
             <ThemeToggle />
             <Link href="/login">
-              <a data-testid="link-login-header">
-                <Button variant="ghost" className="hover-elevate active-elevate-2">
-                  Log In
-                </Button>
-              </a>
+              <Button variant="ghost" className="hover-elevate active-elevate-2" data-testid="link-login-header">
+                Log In
+              </Button>
             </Link>
             <Link href="/signup">
-              <a data-testid="link-signup-header">
-                <Button variant="default">Sign Up</Button>
-              </a>
+              <Button variant="default" data-testid="link-signup-header">Sign Up</Button>
             </Link>
           </div>
         </div>
@@ -78,18 +74,14 @@ export default function Landing() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/signup">
-              <a data-testid="link-signup-hero">
-                <Button size="lg" className="text-lg px-8 py-6 h-auto min-h-12">
-                  Get Started
-                </Button>
-              </a>
+              <Button size="lg" className="text-lg px-8 py-6 h-auto min-h-12" data-testid="link-signup-hero">
+                Get Started
+              </Button>
             </Link>
             <Link href="/login">
-              <a data-testid="link-login-hero">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 h-auto min-h-12 bg-background/50 backdrop-blur">
-                  Sign In
-                </Button>
-              </a>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 h-auto min-h-12 bg-background/50 backdrop-blur" data-testid="link-login-hero">
+                Sign In
+              </Button>
             </Link>
           </div>
         </div>
@@ -136,11 +128,9 @@ export default function Landing() {
             Join thousands of members already exchanging skills and building connections
           </p>
           <Link href="/signup">
-            <a data-testid="link-signup-cta">
-              <Button size="lg" className="text-lg px-8 py-6 h-auto min-h-12">
-                Join SkillSwap Today
-              </Button>
-            </a>
+            <Button size="lg" className="text-lg px-8 py-6 h-auto min-h-12" data-testid="link-signup-cta">
+              Join SkillSwap Today
+            </Button>
           </Link>
         </div>
       </section>
