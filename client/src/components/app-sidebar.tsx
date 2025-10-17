@@ -1,4 +1,4 @@
-import { Home, Lightbulb, Search, MessageSquare, Calendar, User, Settings, LogOut } from "lucide-react";
+import { Home, Lightbulb, Search, MessageSquare, Calendar, User, Settings, LogOut, BookOpen, Users, FolderGit, Play, ShoppingCart, BarChart } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import {
   Sidebar,
@@ -20,6 +20,12 @@ const menuItems = [
   { title: "Find Skills", url: "/dashboard/discover", icon: Search },
   { title: "Messages", url: "/dashboard/chat", icon: MessageSquare },
   { title: "Calendar", url: "/dashboard/calendar", icon: Calendar },
+  { title: "Learning Paths", url: "/dashboard/learning-paths", icon: BookOpen },
+  { title: "Skill Circles", url: "/dashboard/groups", icon: Users },
+  { title: "Projects", url: "/dashboard/projects", icon: FolderGit },
+  { title: "Course Builder", url: "/dashboard/course-builder", icon: Play },
+  { title: "Marketplace", url: "/dashboard/course-marketplace", icon: ShoppingCart },
+  { title: "Instructor Dashboard", url: "/dashboard/instructor-dashboard", icon: BarChart },
   { title: "Profile", url: "/dashboard/profile", icon: User },
   { title: "Settings", url: "/dashboard/settings", icon: Settings },
 ];

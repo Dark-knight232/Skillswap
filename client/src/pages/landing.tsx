@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Sparkles, Calendar, Shield } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import heroImage from "@assets/generated_images/Hero_image_collaborative_learning_5cf8eca1.png";
 
 export default function Landing() {
   const features = [
@@ -55,11 +54,7 @@ export default function Landing() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background z-10"></div>
-          <img
-            src={heroImage}
-            alt="People collaborating and learning together"
-            className="w-full h-full object-cover opacity-40"
-          />
+          <div className="w-full h-full bg-gray-900 opacity-40"></div>
         </div>
         
         <div className="container mx-auto px-6 py-24 relative z-20 text-center">

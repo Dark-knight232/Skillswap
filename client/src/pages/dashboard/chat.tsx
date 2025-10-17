@@ -6,9 +6,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Send, Search } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import avatar1 from "@assets/generated_images/Female_professional_avatar_4d4900f0.png";
-import avatar2 from "@assets/generated_images/Male_professional_avatar_492df590.png";
-import avatar3 from "@assets/generated_images/Experienced_professional_avatar_13ef1d1a.png";
 
 export default function Chat() {
   const [selectedConversation, setSelectedConversation] = useState("1");
@@ -19,7 +16,7 @@ export default function Chat() {
     {
       id: "1",
       name: "Sarah Chen",
-      avatar: avatar1,
+      avatar: "",
       lastMessage: "That sounds great! When would you like to start?",
       timestamp: "2m ago",
       unread: 2,
@@ -28,7 +25,7 @@ export default function Chat() {
     {
       id: "2",
       name: "Michael Ross",
-      avatar: avatar2,
+      avatar: "",
       lastMessage: "Thanks for reaching out!",
       timestamp: "1h ago",
       unread: 0,
@@ -37,7 +34,7 @@ export default function Chat() {
     {
       id: "3",
       name: "Emily Davis",
-      avatar: avatar3,
+      avatar: "",
       lastMessage: "I'm available on weekends",
       timestamp: "3h ago",
       unread: 1,

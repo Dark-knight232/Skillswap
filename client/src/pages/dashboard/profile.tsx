@@ -9,7 +9,6 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Star, Mail, Edit, Award } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import avatar1 from "@assets/generated_images/Female_professional_avatar_4d4900f0.png";
 
 export default function Profile() {
   const { toast } = useToast();
@@ -19,7 +18,7 @@ export default function Profile() {
     username: "@alexmorgan",
     email: "alex.morgan@example.com",
     bio: "Passionate about technology and design. Love learning new skills and helping others grow. Currently focusing on web development and UI/UX design.",
-    avatar: avatar1,
+    avatar: "",
     rating: 4.8,
     totalReviews: 24,
     completedExchanges: 12,

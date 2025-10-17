@@ -4,9 +4,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Star, Clock, CheckCircle, Users } from "lucide-react";
 import { Link } from "wouter";
-import avatar1 from "@assets/generated_images/Female_professional_avatar_4d4900f0.png";
-import avatar2 from "@assets/generated_images/Male_professional_avatar_492df590.png";
-import avatar3 from "@assets/generated_images/Experienced_professional_avatar_13ef1d1a.png";
 
 export default function DashboardHome() {
   const stats = [
@@ -20,7 +17,7 @@ export default function DashboardHome() {
     {
       id: "1",
       name: "Sarah Chen",
-      avatar: avatar1,
+      avatar: "",
       skill: "Web Development",
       wantsToLearn: "Graphic Design",
       rating: 4.9,
@@ -29,7 +26,7 @@ export default function DashboardHome() {
     {
       id: "2",
       name: "Michael Ross",
-      avatar: avatar2,
+      avatar: "",
       skill: "Photography",
       wantsToLearn: "Video Editing",
       rating: 4.7,
@@ -38,7 +35,7 @@ export default function DashboardHome() {
     {
       id: "3",
       name: "Emily Davis",
-      avatar: avatar3,
+      avatar: "",
       skill: "Content Writing",
       wantsToLearn: "Social Media Marketing",
       rating: 5.0,

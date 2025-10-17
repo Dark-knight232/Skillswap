@@ -17,6 +17,12 @@ import Chat from "@/pages/dashboard/chat";
 import Calendar from "@/pages/dashboard/calendar";
 import Profile from "@/pages/dashboard/profile";
 import Settings from "@/pages/dashboard/settings";
+import LearningPaths from "@/pages/dashboard/learning-paths";
+import Groups from "@/pages/dashboard/groups";
+import Projects from "@/pages/dashboard/projects";
+import CourseBuilder from "@/pages/dashboard/course-builder";
+import CourseMarketplace from "@/pages/dashboard/course-marketplace";
+import InstructorDashboard from "@/pages/dashboard/instructor-dashboard";
 
 function Router() {
   return (
@@ -78,6 +84,54 @@ function Router() {
         {() => (
           <DashboardLayout>
             <Settings />
+          </DashboardLayout>
+        )}
+      </Route>
+      
+      <Route path="/dashboard/learning-paths">
+        {() => (
+          <DashboardLayout>
+            <LearningPaths />
+          </DashboardLayout>
+        )}
+      </Route>
+      
+      <Route path="/dashboard/groups">
+        {() => (
+          <DashboardLayout>
+            <Groups />
+          </DashboardLayout>
+        )}
+      </Route>
+      
+      <Route path="/dashboard/projects">
+        {() => (
+          <DashboardLayout>
+            <Projects />
+          </DashboardLayout>
+        )}
+      </Route>
+      
+      <Route path="/dashboard/course-builder">
+        {() => (
+          <DashboardLayout>
+            <CourseBuilder />
+          </DashboardLayout>
+        )}
+      </Route>
+      
+      <Route path="/dashboard/course-marketplace">
+        {() => (
+          <DashboardLayout>
+            <CourseMarketplace />
+          </DashboardLayout>
+        )}
+      </Route>
+      
+      <Route path="/dashboard/instructor-dashboard">
+        {() => (
+          <DashboardLayout>
+            <InstructorDashboard />
           </DashboardLayout>
         )}
       </Route>
