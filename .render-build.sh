@@ -7,4 +7,7 @@ rm -rf dist node_modules package-lock.json
 echo "Installing dependencies..."
 npm install
 
+echo "Building client..."
+npm run build
+
 echo "Build complete - ready to start!"
