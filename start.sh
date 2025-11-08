@@ -1,5 +1,5 @@
-#!/bin/bash
+#!/bin/sh
 # Production start script for Render
 
 export NODE_ENV=production
-exec tsx server/index.ts
+exec npx tsx server/index.ts

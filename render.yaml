@@ -5,8 +5,8 @@ services:
     env: node
     region: oregon
     plan: free
-    buildCommand: bash .render-build.sh
-    startCommand: bash start.sh
+    buildCommand: sh .render-build.sh
+    startCommand: sh start.sh
     envVars:
       - key: NODE_ENV
         value: production

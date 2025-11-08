@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Render build script - ensures clean build
 
 echo "Cleaning previous builds..."
