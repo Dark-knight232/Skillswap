@@ -42,8 +42,11 @@ RUN npm ci && npm cache clean --force
 COPY --from=builder --chown=skillswap:nodejs /app/dist ./dist
 COPY --from=builder --chown=skillswap:nodejs /app/server ./server
 COPY --from=builder --chown=skillswap:nodejs /app/shared ./shared
+COPY --from=builder --chown=skillswap:nodejs /app/client ./client
 COPY --from=builder --chown=skillswap:nodejs /app/migrations ./migrations
 COPY --from=builder --chown=skillswap:nodejs /app/scripts ./scripts
+COPY --from=builder --chown=skillswap:nodejs /app/tsconfig.json ./tsconfig.json
+COPY --from=builder --chown=skillswap:nodejs /app/vite.config.ts ./vite.config.ts
 
 # Copy other necessary files
 COPY --chown=skillswap:nodejs docs ./docs
