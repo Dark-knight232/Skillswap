@@ -1,0 +1,20 @@
+[33ma6420de[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31mdarknight/main[m[33m)[m Debug: Add ls commands to check file structure
+[33m3e2d3cb[m Fix: Move tsx to dependencies, remove sharp and isomorphic-dompurify
+[33mf07cb4a[m Simplify: Remove shell scripts, use npm commands directly with tsx
+[33m546eb81[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Fix: Use sh instead of bash for Render compatibility
+[33ma0f3907[m Fix: Clarify build process - client uses Vite, server uses tsx runtime
+[33m9ad6516[m Add isomorphic-dompurify dependency
+[33m7e9a262[m Fix: Update render.yaml with correct build and start commands
+[33m72cd065[m Update build script to include client build
+[33m3475110[m Fix: Add bash start script for Linux compatibility
+[33mf819317[m Fix: Update start script to use tsx instead of compiled dist
+[33m5fff0d1[m Add Render build script to ensure clean builds
+[33mdbd9eac[m Fix: Completely remove isomorphic-dompurify and use basic sanitization
+[33m92402b9[m Fix: Add missing isomorphic-dompurify dependency for Render deployment
+[33m2f09b21[m Add Render deployment configuration and guide
+[33m1b188f8[m backend features updated 1#
+[33m25bfc0f[m Clean up AI-related files and folders that could reveal project origin
+[33mdc045c3[m Add Course Builder feature with Marketplace and Instructor Dashboard
+[33m362de17[m Integrate backend APIs and fetch data for user skill discovery
+[33me607c14[m Implement core authentication and user profile features
+[33mcb13a7b[m Introduce core application structure and UI components
