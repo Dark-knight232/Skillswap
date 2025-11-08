@@ -78,11 +78,23 @@ export function serveStatic(app: Express) {
   const distPath = path.resolve(import.meta.dirname, "../dist/public");
 
   if (!fs.existsSync(distPath)) {
-    throw new Error(
-      `Could not find the build directory: ${distPath}, make sure to build the client first`,
-    );
+    log(`Warning: Build directory not found at ${distPath}`);
+    log(`Serving a simple message instead`);
+    app.use("*", (_req, res) => {
+      res.send(`
+        <html>
+          <body>
+            <h1>Skillswap API is running!</h1>
+            <p>Frontend build not found. API endpoints are available at /api/*</p>
+            <p>Build directory expected at: ${distPath}</p>
+          </body>
+        </html>
+      `);
+    });
+    return;
   }
 
+  log(`Serving static files from ${distPath}`);
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist
