@@ -1,6 +1,6 @@
 import { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand, HeadObjectCommand } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
-import sharp from 'sharp';
+// import sharp from 'sharp'; // Commented out - not available in production
 import ffmpeg from 'fluent-ffmpeg';
 import ffmpegStatic from 'ffmpeg-static';
 import { randomUUID } from 'crypto';
@@ -283,31 +283,36 @@ export class MediaService {
         const mediaFile = await storage.getMediaFile(fileId);
         if (!mediaFile) throw new Error('Media file not found');
 
-        // Create thumbnail
-        const thumbnailBuffer = await sharp(imageBuffer)
-            .resize(this.config.processing.thumbnailSize.width, this.config.processing.thumbnailSize.height, {
-                fit: 'cover',
-                position: 'center',
-            })
-            .jpeg({ quality: 80 })
-            .toBuffer();
+        // Image processing disabled - sharp not available
+        // TODO: Re-enable when sharp is properly installed
+        const thumbnailUrl = '';
+        const processedUrl = '';
+        
+        // // Create thumbnail
+        // const thumbnailBuffer = await sharp(imageBuffer)
+        //     .resize(this.config.processing.thumbnailSize.width, this.config.processing.thumbnailSize.height, {
+        //         fit: 'cover',
+        //         position: 'center',
+        //     })
+        //     .jpeg({ quality: 80 })
+        //     .toBuffer();
 
-        const thumbnailKey = `thumbnails/${mediaFile.userId}/${fileId}_thumb.jpg`;
-        await this.uploadToS3(thumbnailKey, thumbnailBuffer, 'image/jpeg');
-        const thumbnailUrl = this.generateCdnUrl(thumbnailKey);
+        // const thumbnailKey = `thumbnails/${mediaFile.userId}/${fileId}_thumb.jpg`;
+        // await this.uploadToS3(thumbnailKey, thumbnailBuffer, 'image/jpeg');
+        // const thumbnailUrl = this.generateCdnUrl(thumbnailKey);
 
-        // Create processed version (resized if too large)
-        const processedBuffer = await sharp(imageBuffer)
-            .resize(this.config.processing.imageMaxWidth, this.config.processing.imageMaxHeight, {
-                fit: 'inside',
-                withoutEnlargement: true,
-            })
-            .jpeg({ quality: 85 })
-            .toBuffer();
+        // // Create processed version (resized if too large)
+        // const processedBuffer = await sharp(imageBuffer)
+        //     .resize(this.config.processing.imageMaxWidth, this.config.processing.imageMaxHeight, {
+        //         fit: 'inside',
+        //         withoutEnlargement: true,
+        //     })
+        //     .jpeg({ quality: 85 })
+        //     .toBuffer();
 
-        const processedKey = `processed/${mediaFile.userId}/${fileId}_processed.jpg`;
-        await this.uploadToS3(processedKey, processedBuffer, 'image/jpeg');
-        const processedUrl = this.generateCdnUrl(processedKey);
+        // const processedKey = `processed/${mediaFile.userId}/${fileId}_processed.jpg`;
+        // await this.uploadToS3(processedKey, processedBuffer, 'image/jpeg');
+        // const processedUrl = this.generateCdnUrl(processedKey);
 
         return { thumbnailUrl, processedUrl };
     }
