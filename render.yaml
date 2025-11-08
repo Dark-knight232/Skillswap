@@ -5,8 +5,8 @@ services:
     env: node
     region: oregon
     plan: free
-    buildCommand: sh .render-build.sh
-    startCommand: sh start.sh
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
