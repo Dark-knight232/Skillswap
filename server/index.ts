@@ -4,6 +4,8 @@ import { setupVite, serveStatic, log } from "./vite";
 import { setupSwagger } from "./swagger";
 
 const app = express();
+// Set Express environment based on NODE_ENV
+app.set('env', process.env.NODE_ENV || 'development');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
