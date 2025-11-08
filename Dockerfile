@@ -54,6 +54,9 @@ COPY --chown=skillswap:nodejs docs ./docs
 # Create directories for uploads and logs
 RUN mkdir -p uploads logs && chown -R skillswap:nodejs uploads logs
 
+# Give write permissions to node_modules for vite cache (if needed)
+RUN chown -R skillswap:nodejs /app/node_modules
+
 # Switch to non-root user
 USER skillswap
 
