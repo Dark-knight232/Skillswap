@@ -40,6 +40,8 @@ RUN npm ci --only=production && npm cache clean --force
 
 # Copy built application from builder stage
 COPY --from=builder --chown=skillswap:nodejs /app/dist ./dist
+COPY --from=builder --chown=skillswap:nodejs /app/server ./server
+COPY --from=builder --chown=skillswap:nodejs /app/shared ./shared
 COPY --from=builder --chown=skillswap:nodejs /app/migrations ./migrations
 COPY --from=builder --chown=skillswap:nodejs /app/scripts ./scripts
 
