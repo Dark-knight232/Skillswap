@@ -64,12 +64,20 @@ app.use((req, res, next) => {
   const env = app.get("env");
   log(`Environment: ${env}, NODE_ENV: ${process.env.NODE_ENV}`);
   
-  if (env === "development") {
+  // Check if dist/public exists to determine if we should serve static files
+  const fs = await import("fs");
+  const path = await import("path");
+  const distPath = path.resolve(import.meta.dirname, "../dist/public");
+  const hasBuiltFiles = fs.existsSync(distPath);
+  
+  log(`Dist path: ${distPath}, exists: ${hasBuiltFiles}`);
+  
+  if (hasBuiltFiles) {
+    log("Serving static files from dist");
+    serveStatic(app);
+  } else {
     log("Setting up Vite dev server");
     await setupVite(app, server);
-  } else {
-    log("Serving static files");
-    serveStatic(app);
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
