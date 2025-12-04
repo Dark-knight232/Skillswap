@@ -1,3 +1,8 @@
+// Force NODE_ENV to production if not set (must be before any imports that use dotenv)
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = 'production';
+}
+
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
@@ -5,7 +10,7 @@ import { setupSwagger } from "./swagger";
 
 const app = express();
 // Set Express environment based on NODE_ENV
-app.set('env', process.env.NODE_ENV || 'development');
+app.set('env', process.env.NODE_ENV);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
